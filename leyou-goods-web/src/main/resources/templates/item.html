@@ -632,8 +632,11 @@
         },
 		computed:{
             sku(){
-                const index = Object.values(this.index).join("-");
-				return this.skus.find(s => s.indexes = index);
+				if (Object.values(this.index).includes(null)) {
+					return skus[0];
+				}
+                const index = Object.values(this.index).join("_");
+				return this.skus.find(s => s.indexes === index);
 			},
 			images(){
                 return this.sku.images ? this.sku.images.split(",") : [''];

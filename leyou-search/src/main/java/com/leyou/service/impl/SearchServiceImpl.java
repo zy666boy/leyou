@@ -11,8 +11,6 @@ import com.leyou.item.pojo.*;
 import com.leyou.repository.GoodsRepository;
 import com.leyou.service.SearchService;
 import com.leyou.bo.SearchRequest;
-
-
 import com.leyou.utils.JsonUtils;
 import com.leyou.utils.NumberUtils;
 import com.leyou.vo.SearchResult;

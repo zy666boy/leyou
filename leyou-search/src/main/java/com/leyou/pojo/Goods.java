@@ -14,7 +14,7 @@ import java.util.Map;
  * Time: 2018-10-11 17:21
  * Feature:搜索时对应的实体类
  */
-@Document(indexName = "goods", type = "docs", shards = 1, replicas = 0)
+@Document(indexName = "newgoods", type = "docs", shards = 1, replicas = 0)
 public class Goods {
     @Id
     /**

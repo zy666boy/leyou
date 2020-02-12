@@ -48,9 +48,9 @@ public class UserTest {
     public void addAdmin(){
         User user = new User();
         user.setCreated(new Date());
-        user.setPhone("88888888");
-        user.setUsername("admin");
-        user.setPassword("admin");
+        user.setPhone("13137041905");
+        user.setUsername("leyou");
+        user.setPassword("leyou");
         String encodePassword = CodecUtils.passwordBcryptEncode(user.getUsername().trim(),user.getPassword().trim());
         user.setPassword(encodePassword);
         this.userMapper.insertSelective(user);

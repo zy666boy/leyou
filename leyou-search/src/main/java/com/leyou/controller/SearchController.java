@@ -8,6 +8,7 @@ import com.leyou.service.impl.SearchServiceImpl;
 import com.leyou.bo.SearchRequest;
 import com.leyou.pojo.Goods;
 import com.leyou.vo.SearchResult;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;

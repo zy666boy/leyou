@@ -26,7 +26,7 @@ import java.util.List;
  * Feature:
  */
 @RestController
-@RequestMapping("goods")
+@RequestMapping("/goods")
 public class GoodsController{
 
     @Autowired
@@ -99,8 +99,9 @@ public class GoodsController{
      * @param id
      * @return
      */
-    @GetMapping("sku/list/{id}")
+    @GetMapping("/sku/list/{id}")
     public ResponseEntity<List<Sku>> querySkuBySpuId(@PathVariable("id") Long id){
+        System.out.println("spuId->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+id);
         List<Sku> list = this.goodsService.querySkuBySpuId(id);
         if (list == null || list.size() < 1){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

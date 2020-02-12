@@ -55,7 +55,7 @@ public class AuthController {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
         //2.将token写入cookie，并指定httpOnly为true，防止通过js获取和修改
-        CookieUtils.setCookie(request,response,properties.getCookieName(),token,properties.getCookieMaxAge(),true);
+        CookieUtils.setCookie(request,response,properties.getCookieName(),token,properties.getCookieMaxAge()*60,true);
 
         return ResponseEntity.ok().build();
     }
@@ -74,7 +74,7 @@ public class AuthController {
             //2.解析成功要重新刷新token
             token = JwtUtils.generateToken(userInfo,this.properties.getPrivateKey(),this.properties.getExpire());
             //3.更新Cookie中的token
-            CookieUtils.setCookie(request,response,this.properties.getCookieName(),token,this.properties.getCookieMaxAge());
+            CookieUtils.setCookie(request,response,this.properties.getCookieName(),token,this.properties.getCookieMaxAge()*60);
             //4.解析成功返回用户信息
             return ResponseEntity.ok(userInfo);
         }catch (Exception e){
